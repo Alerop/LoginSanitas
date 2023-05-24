@@ -1,0 +1,39 @@
+<form [formGroup]="formGroup" class="form-login" (submit)="submitForm()">
+    <mat-form-field>
+        <input type="email" matInput [placeholder]="emailPlaceholder" formControlName="email">
+        <mat-error *ngIf="emailInput.errors?.['required']">
+            <span [innerText]="errorEmailRequired"></span>
+        </mat-error>
+        <mat-error *ngIf="emailInput.errors?.['email']">
+            <span [innerText]="errorEmailFormat"></span>
+        </mat-error>
+        <mat-icon matPrefix>
+            <span class="material-symbols-outlined">
+                person
+            </span>
+        </mat-icon>
+
+    </mat-form-field>
+    <mat-form-field>
+        <input type="password" matInput [placeholder]="passwordPlaceholder" formControlName="password">
+        <mat-icon matPrefix>
+            <span class="material-symbols-outlined">
+                lock_open
+            </span>
+        </mat-icon>
+        <mat-error *ngIf="passwordInput.errors?.['required']">
+            <span [innerText]="errorPasswordRequired"></span>
+        </mat-error>
+        <mat-error *ngIf="passwordInput.errors?.['minlength']">
+            <span [innerText]="errorPasswordMinLength"></span>
+        </mat-error>
+    </mat-form-field>
+    <div class="form-login__toggle">
+        <span [innerText]="reminderText"></span>
+        <mat-slide-toggle color="accent" formControlName="reminder"></mat-slide-toggle>
+
+    </div>
+    <button type="submit" class="form-login__button">
+        <span class="form-login__button__text" [innerText]="submitText"></span>
+    </button>
+</form>

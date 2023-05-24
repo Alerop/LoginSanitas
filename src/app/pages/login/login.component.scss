@@ -1,0 +1,60 @@
+.container {
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+
+    .login {
+        margin-top: 1rem;
+        min-width: 17rem;
+        place-self: start center;
+
+        @media (min-width:960px) {
+            place-self: center;
+            min-width: 22rem;
+
+        }
+
+        &__logo {
+
+            background: transparent;
+            display: grid;
+
+            @media (min-width:960px) {
+                padding-top: 2rem;
+                background: white;
+            }
+
+            &__img {
+                width: 6rem;
+                height: 8rem;
+                place-self: center;
+                overflow: hidden;
+
+                img {
+                    width: 10rem;
+                }
+            }
+        }
+
+        &__text {
+            background: white;
+            display: none;
+
+            h2 {
+                margin: 0;
+                place-self: center;
+
+            }
+
+            @media (min-width:960px) {
+                display: grid;
+
+            }
+        }
+
+        &__form {
+            background: white;
+            display: grid;
+        }
+    }
+}
