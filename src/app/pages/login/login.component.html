@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="login">
+        <div class="login__logo">
+            <div class="login__logo__img">
+                <img src="../../../assets/logo.jpg" [alt]="altImage" [title]="titleImage">
+            </div>
+        </div>
+        <div class="login__text">
+            <h2 [innerText]="textTitle"></h2>
+        </div>
+
+        <div class="login__form">
+            <app-login-form [emailPlaceholder]="formConfig?.emailPlaceholder"
+                [passwordPlaceholder]="formConfig?.passwordPlaceholder" [errorEmailFormat]="formConfig?.errorEmailFormat"
+                [errorEmailRequired]="formConfig?.errorEmailRequired"
+                [errorPasswordMinLength]="formConfig?.errorPasswordMinLength"
+                [errorPasswordRequired]="formConfig?.errorPasswordRequired" [reminderText]="formConfig?.reminderText"
+                [submitText]="formConfig?.submitText"></app-login-form>
+        </div>
+    </div>
+</div>
