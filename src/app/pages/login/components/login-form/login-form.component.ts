@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,25 +8,17 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class LoginFormComponent implements OnInit {
   formGroup: FormGroup;
-  emailPlaceholder: string;
-  passwordPlaceholder: string;
-  errorEmailRequired: string;
-  errorEmailFormat: string;
-  errorPasswordRequired: string;
-  errorPasswordMinLength: string;
-  reminderText: string;
-  submitText: string;
+  @Input() emailPlaceholder!: string | undefined;
+  @Input() passwordPlaceholder!: string | undefined;
+  @Input() errorEmailRequired!: string | undefined;
+  @Input() errorEmailFormat!: string | undefined;
+  @Input() errorPasswordRequired!: string | undefined;
+  @Input() errorPasswordMinLength!: string | undefined;
+  @Input() reminderText!: string | undefined;
+  @Input() submitText!: string | undefined;
 
   constructor(private formBuilder: FormBuilder) {
     this.formGroup = this.formBuilder.group({});
-    this.errorEmailRequired = "Email es requerido.";
-    this.errorEmailFormat = "El formato del email es incorrecto.";
-    this.errorPasswordRequired = "Contraseña es requerida.";
-    this.errorPasswordMinLength = "Contraseña debe de tener al menos 5 caracteres.";
-    this.reminderText = "Recordar";
-    this.submitText = "Acceder";
-    this.emailPlaceholder = "Email";
-    this.passwordPlaceholder = "Contraseña";
   }
 
   ngOnInit() {

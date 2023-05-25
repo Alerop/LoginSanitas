@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginFormModule } from './components/login-form/login-form.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -13,7 +14,8 @@ import { LoginFormModule } from './components/login-form/login-form.module';
   imports: [
     CommonModule,
     LoginRoutingModule,
-    LoginFormModule
+    LoginFormModule,
+    HttpClientModule
   ],
   exports: [
     LoginComponent

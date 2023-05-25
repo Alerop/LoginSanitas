@@ -1,6 +1,6 @@
 <form [formGroup]="formGroup" class="form-login" (submit)="submitForm()">
     <mat-form-field>
-        <input type="email" matInput [placeholder]="emailPlaceholder" formControlName="email">
+        <input type="email" matInput [placeholder]="emailPlaceholder || ''" formControlName="email">
         <mat-error *ngIf="emailInput.errors?.['required']">
             <span [innerText]="errorEmailRequired"></span>
         </mat-error>
@@ -12,9 +12,8 @@
                 person
             </span>
         </mat-icon>
-
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field *ngIf="passwordPlaceholder">
         <input type="password" matInput [placeholder]="passwordPlaceholder" formControlName="password">
         <mat-icon matPrefix>
             <span class="material-symbols-outlined">
